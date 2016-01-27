@@ -4,7 +4,7 @@ import org.w3.banana._
 
 trait NodeMatchSyntax[Rdf <: RDF] { self: RDFSyntax[Rdf] =>
 
-  implicit def nodeMatchW(nodeMatch: Rdf#NodeMatch) =
+  implicit def nodeMatchW(nodeMatch: Rdf#NodeMatch): NodeMatchW[Rdf] =
     new NodeMatchW[Rdf](nodeMatch)
 
 }

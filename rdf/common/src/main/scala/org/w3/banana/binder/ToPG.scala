@@ -11,7 +11,7 @@ trait ToPG[Rdf <: RDF, -T] {
 
 object ToPG {
 
-  implicit def PointedGraphToPG[Rdf <: RDF] = new ToPG[Rdf, PointedGraph[Rdf]] {
+  implicit def PointedGraphToPG[Rdf <: RDF]: ToPG[Rdf, PointedGraph[Rdf]] = new ToPG[Rdf, PointedGraph[Rdf]] {
     def toPG(t: PointedGraph[Rdf]): PointedGraph[Rdf] = t
   }
 
